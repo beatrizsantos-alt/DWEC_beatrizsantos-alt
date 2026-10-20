@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Numeros primos</title>
+</head>
+<body>
+
+    <h1>Numeros primos</h1>
+
+    <p>Introduce un numero:</p>
+    <input type="number" id="numero" value="7">
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let numero = document.getElementById("numero").value;
+            numero = Number(numero);
+
+            let resultado = "";
+
+            for (let i = 2; i <= numero; i++) {
+                let primo = true;
+
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        primo = false;
+                    }
+                }
+
+                if (primo == true) {
+                    resultado = resultado + i + " ";
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+
+</body>
+</html>
